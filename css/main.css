@@ -1,0 +1,214 @@
+*,
+*::after,
+*::before{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    min-height: 100vh;
+    background-color: #ffffff;
+    font-family: sans-serif;
+    font-size: 15px;
+    line-height: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    
+}
+
+.card{
+    max-width: 960px;
+    min-height: 400px;
+    background-color: #eeeeee;
+    /* position: absolute; */
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    border-radius: 10px;
+    box-shadow: 4px 5px 30px rgba(0, 0, 0, 0.5);
+    
+    /* overflow: hidden; */
+    
+}
+/* появление при наведении на блок .card */
+/* .card:hover .cardRight{
+    top: 0%;
+} */
+
+.cardLeft,
+.cardRight{
+    display: inline-block;
+    padding-inline: 30px;
+    margin: 10px;
+}
+
+.cardLeft{
+    width: 30%;
+    
+    vertical-align: middle;
+    position: relative;
+
+}
+
+.cardLeft img{
+    width: 100%;
+    max-width: 420px;
+    height: 450px;
+    position: relative;
+    object-fit: cover;
+    right:35px;
+    top: 25px;
+    overflow: visible;
+    animation-name: moveBox;
+animation-duration: 5s;
+animation-timing-function:  cubic-bezier(.42,.14,.6,.95);
+animation-iteration-count: inherit;
+animation-delay: 2s;
+}
+
+@keyframes moveBox{
+0%,100% {
+    top: 0%;
+    left: 0%;
+
+}
+50%{
+    top:50%;
+    left: 30%;
+
+}
+95%{
+    top: 10%;
+    left: 25%;
+}
+}
+
+.cardRight{
+    width: 60%;
+    /* max-width: 320px; */
+    /* появление при наведении на блок .card */
+    /* position: absolute;
+    top: 110%;
+    left: 0; */
+    transition: 0.8s;
+/* From https://css.glass */
+background: rgba(255, 255, 255, 0.495);
+border-radius: 10px;
+box-shadow: 4px 5px 30px rgba(0, 0, 0, 0.5);
+backdrop-filter: blur(3.3px);
+-webkit-backdrop-filter: blur(3.3px);
+    color: #202020;
+    /* margin: 0 auto; */
+
+    /* position: relative; */
+    right: 0px;
+    bottom: 5px;
+
+    
+    /* transform: translateY(-50%); */
+    vertical-align: middle;
+    border-radius: 10px;
+}
+
+
+
+.cardRight h2{
+    margin: 5px;
+    padding: 5px;
+    color: #1eadb3;
+    /* position: relative; */
+    z-index: 10;
+}
+
+
+.cardRight p{
+    /* position: relative; */
+    margin-bottom: 5px;
+    padding-left: 5px;
+
+}
+
+
+
+.price{
+    color:#da3535;
+    font-size: 25px;
+    padding-left: 5px;
+    margin-bottom: 25px !important;
+}
+
+/* .cardRight h2::after{
+    content:"";
+    background-color: #c7f014;
+    width: 5%;
+    height: 36px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.6s;
+    z-index: -1;
+} */
+.btn{
+    width: 150px;
+    height: 45px;
+    border:none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color:#1eadb3;
+    margin-bottom: 25px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 4px 5px 30px rgba(0, 0, 0, 0.5);
+}
+
+.btn:hover{
+    background-color: #158084;
+}
+
+.cardRight:hover h2::after{
+    width: 100%;
+}
+
+.cardRight:hover h2{
+    color: #29e5ec;
+}
+
+@media screen and (max-width:1490px) {
+    .cardRight{
+        top: 50px;
+    }
+}
+
+
+@media screen and (max-width:1220px) and (min-width:800px) {
+    .cardLeft,
+    .cardRight{
+        display: block;
+        width: 100%;
+    }
+
+    .cardLeft img{
+        width: 50%;
+    }
+
+    .cardLeft{
+        text-align: center;
+    }
+    .cardRight{
+        position: static;
+        transform: none;
+    }
+}
